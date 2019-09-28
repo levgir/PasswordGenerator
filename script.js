@@ -3,7 +3,6 @@ var alphaLower = 'abcdefghijklmnopqrstuvwxyz';
 var numerals = '0123456789';
 var specialChars = '!@#$%^&*()~_-+=;:,<>/?';
 var passChars = document.getElementById("passCharInput");
-// var passwordText = document.getElementById("password");
 
 function generatePass() {
     var passLength = passChars.value;
@@ -22,27 +21,30 @@ function generatePass() {
 }
 
 function criteria() {
-    var inputElements = document.getElementsByClassName('criteriaCheckbox');
-    console.log(inputElements);
-    var criteriaString = "";
-    for (var i = 0; i < inputElements.length; i++) {
-        if (inputElements[i].checked) {
-            var checkValue = inputElements[i].value;
-            console.log(checkValue);
-            if (checkValue === "uppercase") {
-                criteriaString += alphaUpper;
-            }else if (checkValue === "lowercase") {
-                criteriaString += alphaLower;
-            }else if (checkValue === "numbers") {
-                criteriaString += numerals;
-            }else if (checkValue === "special") {
-                criteriaString += specialChars;
-            }else{
-                alert("You have to pick at least one criteria.")
-            }
-        }
-        return criteriaString;
+    var upperCase = document.getElementById('uppercase');
+    var lowerCase = document.getElementById('lowercase');
+    var nums = document.getElementById('numbers');
+    var specChars = document.getElementById('special');
+    criteriaString = "";
+
+    if (upperCase.checked) {
+        criteriaString += alphaUpper;
     }
+    if (lowerCase.checked) {
+        criteriaString += alphaLower;
+    }
+    if (nums.checked) {
+        criteriaString += numerals;
+    }
+    if (specChars.checked) {
+        criteriaString += specialChars;
+    }
+    if (upperCase.checked === false && lowerCase.checked === false && nums.checked === false && specChars.checked === false) {
+        alert("You have to pick at least one criteria.");
+        throw new Error("You have to pick at least one criteria.");
+    }
+
+    return criteriaString;
 }
 
 function copyPass() {
