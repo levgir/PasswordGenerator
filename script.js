@@ -5,6 +5,7 @@ var specialChars = '!@#$%^&*()~_-+=;:,<>/?';
 var passChars = document.getElementById("passCharInput");
 
 function generatePass() {
+    event.preventDefault();
     var passLength = passChars.value;
     var criteriaArray = criteria();
     console.log(criteriaArray);
@@ -16,7 +17,7 @@ function generatePass() {
         }
         return randomString;
     } else {
-        alert("Your password must be at least 8 characters and no more than 128 long.")
+        alert("Password must be between 8 and 128 characters.")
     }
 }
 
@@ -48,6 +49,7 @@ function criteria() {
 }
 
 function copyPass() {
+    event.preventDefault();
     var passText = document.getElementById("password");
     passText.select();
     passText.setSelectionRange(0, 99999);

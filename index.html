@@ -3,46 +3,96 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
   <title>Password Generator</title>
 </head>
 
 <body>
-
-    <header>
+  <div class="container col-xs-12 col-md-6 col-lg-8">
+    <header class="col text-center">
       <h1>Password Generator</h1>
     </header>
+    
+    <div id="passwordGenerator">
       <h2>Generate a Password</h2>
-      
+      <hr class="section-headers-divider">
       <form>
-        How many characters long do you want your password to be? (Must be between 8 and 128): <input type="number" name="passCharCount" min="8" max="128" id="passCharInput">
+        <div class="form-group">
+          Password length (8 - 128 characters): <input type="number" name="passCharCount" min="8"
+            max="128" id="passCharInput">
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="uppercase" value="uppercase">
+          <label class="form-check-label" for="uppercase">Uppercase Letters</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="lowercase" value="lowercase">
+          <label class="form-check-label" for="lowercase">Lowercase Letters</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="numbers" value="numbers">
+          <label class="form-check-label" for="numbers">Numbers</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="special" value="special">
+          <label class="form-check-label" for="special">Special Characters</label>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="password" rows="3" placeholder="Your secure passord"
+            style="text-align: center" readonly></textarea>
+        </div>
       </form>
-      
-      <textarea readonly id="password" placeholder="Your Secure Password"></textarea>
-      
-      <button id="generate">Generate Password</button>
-      
-      <button id="copy">Copy to Clipboard</button><br>
+      <hr class="section-headers-divider">
+      <div class="row">
+        <div class="col text-center">
+          <button id="generate">Generate Password</button>
+        </div>
+        <div class="col text-center">
+          <button id="copy">Copy to Clipboard</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <p> Please choose your criteria (you have to choose at least one):<br>
-        <input type="checkbox" id="uppercase" class="criteriaCheckbox" value="uppercase">Uppercase Letters<br>
+  <!-- <form>
+    Choose password length (between 8 and 128 characters): <input type="number" name="passCharCount" min="8" max="128"
+      id="passCharInput">
+  </form>
+  <p> Please choose your criteria (you have to choose at least one):<br>
+    <input type="checkbox" id="uppercase" class="criteriaCheckbox" value="uppercase">Uppercase Letters<br>
 
-        <input type="checkbox" id="lowercase" class="criteriaCheckbox" value="lowercase">Lowercase Letters<br>
+    <input type="checkbox" id="lowercase" class="criteriaCheckbox" value="lowercase">Lowercase Letters<br>
 
-        <input type="checkbox" id="numbers" class="criteriaCheckbox" value="numbers">Numbers<br>
+    <input type="checkbox" id="numbers" class="criteriaCheckbox" value="numbers">Numbers<br>
 
-        <input type="checkbox" id="special" class="criteriaCheckbox" value="special">Special Characters<br>
-      </p>
+    <input type="checkbox" id="special" class="criteriaCheckbox" value="special">Special Characters<br>
+  </p>
+
+  <textarea readonly id="password" placeholder="Your Secure Password"></textarea><br>
+
+  <button id="generate">Generate Password</button>
+
+  <button id="copy">Copy to Clipboard</button><br> -->
 
 
 
 
 
 
-  
-
-      <script src="./script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

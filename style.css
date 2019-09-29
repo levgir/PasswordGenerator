@@ -1,0 +1,33 @@
+body {
+    background-color: whitesmoke;
+}
+form {
+ border: 2px dashed lightgray;
+ padding: 5px;
+ margin-bottom: 20px;   
+}
+
+#passwordGenerator {
+    background-color: white;
+    padding: 40px 30px 40px 30px;
+}
+
+.section-headers-divider {
+    border: 1px solid lightgray;
+    padding: 0;
+    margin-top: 0;
+}
+
+#generate {
+    background-color: maroon;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+#copy {
+    background-color: lightslategray;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}
